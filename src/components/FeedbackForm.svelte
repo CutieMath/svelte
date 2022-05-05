@@ -2,6 +2,7 @@
     import Card from '../UI/Card.svelte'
     import Button from '../UI/Button.svelte'
     let btnDisabled = true
+    let text=''
 </script>
 
 <Card>
@@ -10,8 +11,8 @@
     </header>
     <form>
         <div class="input-group">
-            <input type="text" placeholder="Tell me a secret x">
-            <Button btnDisabled={btnDisabled} type="submit">Send</Button>
+            <input type="text" bind:value={text} placeholder="Tell me a secret x">
+            <Button disabled={btnDisabled} type="submit">Send</Button>
         </div>
     </form>
 </Card>
