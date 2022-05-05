@@ -1,10 +1,12 @@
 <script>
     import Card from '../UI/Card.svelte'
     import Button from '../UI/Button.svelte'
+    import RatingSelect from './RatingSelect.svelte'
     
     let btnDisabled = true
     let text = ''
     let message
+    let rating = 10
     const MIN = 10
 
     const handleInput = () => {
@@ -23,6 +25,7 @@
         <h2>How would you rate your user experience?</h2>
     </header>
     <form>
+        <RatingSelect />
         <div class="input-group">
             <input type="text" on:input={handleInput} bind:value={text} placeholder="Tell me a secret x">
             <Button disabled={btnDisabled} type="submit">Send</Button>
