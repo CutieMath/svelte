@@ -27,13 +27,14 @@
         left: -10px;
         width: 50px;
         height: 50px;
-        background: #D291BC;
+        background: #EBA5B0;
         color: #fff;
-        border: 1px #eee solid;
+        border: 1px #fff solid;
         border-radius: 50%;
         padding: 10px;
         text-align: center;
         font-size: 19px;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     }
     .close-button {
         position: absolute;

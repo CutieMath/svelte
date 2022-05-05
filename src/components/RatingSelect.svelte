@@ -103,7 +103,7 @@
     }
 
     .rating li:hover {
-        background: #D291BC;
+        background: #EBA5B0;
         color: #fff;
     }
 
@@ -114,7 +114,7 @@
 
     /* Style the selected */
     [type='radio']:checked ~ label {
-        background: #D291BC;
+        background: #EBA5B0;
         color: #fff;
     }
     

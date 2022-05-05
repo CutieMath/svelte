@@ -22,7 +22,7 @@
 
 <Card>
     <header>
-        <h2>How would you rate your user experience?</h2>
+        <h2>How would you rate your user experience with us?</h2>
     </header>
     <form>
         <RatingSelect />
@@ -48,6 +48,7 @@
     font-size: 22px;
     font-weight: 600;
     text-align: center;
+    color: #4C465D;
   }
   .input-group {
     display: flex;
@@ -67,7 +68,6 @@
   }
   .message{
     padding-top: 10px;
-    text-align: center;
-    color: rebeccapurple;
+    text-align: left;
   }
 </style>

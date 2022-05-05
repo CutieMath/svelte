@@ -14,5 +14,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        color: #fff;
+        padding: 2%;
     }
 </style>
