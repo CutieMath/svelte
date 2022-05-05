@@ -8,7 +8,7 @@
     let message
     let rating = 10
     const MIN = 10
-
+    const handleSelect = e => rating = e.detail
     const handleInput = () => {
         if(text.trim().length <= MIN){
             message = `Text must be at least ${MIN} characters`
@@ -25,9 +25,9 @@
         <h2>How would you rate your user experience with us?</h2>
     </header>
     <form>
-        <RatingSelect />
+        <RatingSelect on:rating-select={handleSelect}/>
         <div class="input-group">
-            <input type="text" on:input={handleInput} bind:value={text} placeholder="Tell me a secret x">
+            <input type="text" on:input={handleInput} bind:value={text} placeholder="Tell us your experience ...">
             <Button disabled={btnDisabled} type="submit">Send</Button>
         </div>
         {#if message}
