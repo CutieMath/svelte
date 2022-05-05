@@ -1,6 +1,12 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import Card from '../UI/Card.svelte'; 
     export let item;
+    const dispatch = createEventDispatcher();
+    
+    const handleDelete = (itemId) => {
+        dispatch('delete-item', itemId)
+    }
 </script>
 
 <!-- Use Slots -->
@@ -8,7 +14,7 @@
     <div class="num-display">
         {item.rating}
     </div>
-    <div class="close-button">x</div>
+    <button class="close-button" on:click={() => handleDelete(item.id)}>X</button>
     <p class="text-display">
         {item.content}
     </p>
@@ -34,5 +40,7 @@
         top: 10px;
         right: 20px;
         cursor: pointer;
+        background: none;
+        border: none;
     }
 </style>
