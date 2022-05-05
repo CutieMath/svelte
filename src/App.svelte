@@ -1,6 +1,7 @@
 <script>
 	import FeedbackList from './components/FeedbackList.svelte';
 	import FeedbackStats from './components/FeedbackStats.svelte';
+	import FeedbackForm from './components/FeedbackForm.svelte';
 
 	let feedbacks = [
 		{
@@ -30,6 +31,7 @@
 </script>
 
 <main class="container">
+	<FeedbackForm/>
 	<FeedbackStats itemCount={itemCount} averageRate={averageRate}/>
 	<FeedbackList feedbacks={feedbacks} on:delete-item={deleteItem}/>
 </main>
