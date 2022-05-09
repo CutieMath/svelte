@@ -1,16 +1,17 @@
 <script>
+    import {v4 as uuidv4} from 'uuid'
     import Card from '../UI/Card.svelte'
     import Button from '../UI/Button.svelte'
     import RatingSelect from './RatingSelect.svelte'
     
     let btnDisabled = true
-    let text = ''
+    let content = ''
     let message
     let rating = 10
     const MIN = 10
     const handleSelect = e => rating = e.detail
     const handleInput = () => {
-        if(text.trim().length <= MIN){
+        if(content.trim().length <= MIN){
             message = `Text must be at least ${MIN} characters`
             btnDisabled = true            
         } else {
@@ -18,16 +19,26 @@
             btnDisabled = false 
         }
     }
+    const handleSubmit = () => {
+      if(content.trim().length > MIN){
+        const newFeedBack = {
+          id: uuidv4(),
+          content: content,
+          rating: +rating
+        }
+        console.log(newFeedBack);
+      }
+    }
 </script>
 
 <Card>
     <header>
         <h2>How would you rate your user experience with us?</h2>
     </header>
-    <form>
+    <form on:submit|preventDefault={handleSubmit}>
         <RatingSelect on:rating-select={handleSelect}/>
         <div class="input-group">
-            <input type="text" on:input={handleInput} bind:value={text} placeholder="Tell us your experience ...">
+            <input type="content" on:input={handleInput} bind:value={content} placeholder="Tell us your experience ...">
             <Button disabled={btnDisabled} type="submit">Send</Button>
         </div>
         {#if message}
