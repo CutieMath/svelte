@@ -1,6 +1,7 @@
 <script>
-    export let itemCount 
-    export let averageRate
+    import {FeedbackStore} from '../stores'
+	$: itemCount = $FeedbackStore.length;
+	$: averageRate = Math.round($FeedbackStore.reduce((a, {rating}) => a + rating, 0) / $FeedbackStore.length); 
 </script>
 
 
