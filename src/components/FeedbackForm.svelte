@@ -29,6 +29,7 @@
           rating: +rating
         }
         dispatch('add-feedback', newFeedBack)
+        content = "";
       }
     }
 </script>
