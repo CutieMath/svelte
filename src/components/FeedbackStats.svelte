@@ -6,7 +6,11 @@
 
 
 <div class="feedback-stats">
-    <h4>{itemCount} Reviews</h4>
+    {#if itemCount > 1}
+        <h4>{itemCount} Reviews</h4>
+    {:else}
+        <h4>{itemCount} Review</h4>
+    {/if}
     <h4>Ratings Average: {averageRate}</h4>
 </div>
 
